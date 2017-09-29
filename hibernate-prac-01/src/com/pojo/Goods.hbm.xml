@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.pojo.Goods" table="Goods">
+		<id name="goods_id" column="goods_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="goods_name" column="goods_name"></property>
+		<property name="goods_price" column="goods_price"></property>
+		<many-to-one name="goods_type" class="com.pojo.Type" column="goods_type"></many-to-one>
+	</class>
+
+</hibernate-mapping>

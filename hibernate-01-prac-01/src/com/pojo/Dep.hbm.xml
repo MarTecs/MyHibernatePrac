@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 配置Hibernate类与数据库表的对应关系 -->
+
+<hibernate-mapping>
+	<class name="com.pojo.Dep" table="dep">
+		<id name="depId" column="dep_id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="depName" column="dep_name"></property>
+		<!-- 这里采用一对多的形式进行对应 -->
+		<set name="em">
+			<key column="depid"></key>
+			<one-to-many class="com.pojo.Emp"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>
